@@ -5,10 +5,10 @@
 " License: MIT
 " ==============================================================
 
-if exists("g:vim_replace_loaded")
-    finish
-endif
+" 替换文本
+function! replace#replace#replace_text()
+    let buffer = @
+    call replace#util#delete_current_word()
+    call replace#util#write_text_at_current_row(buffer)
+endfunction
 
-let g:vim_buffer_loaded = 1
-
-command! -nargs=0 ReplaceText :call replace#replace#replace_text()

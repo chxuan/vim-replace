@@ -5,10 +5,12 @@
 " License: MIT
 " ==============================================================
 
-if exists("g:vim_replace_loaded")
-    finish
-endif
+" 删除当前单词
+function! replace#util#delete_current_word()
+    execute "normal diw"
+endfunction
 
-let g:vim_buffer_loaded = 1
-
-command! -nargs=0 ReplaceText :call replace#replace#replace_text()
+" 在当前行写入文本
+function! replace#util#write_text_at_current_row(text)
+    execute "normal i" . a:text
+endfunction

@@ -5,10 +5,13 @@
 " License: MIT
 " ==============================================================
 
+let g:reg_content = ""
+
 " 替换文本
 function! replace#replace#replace_text()
-    let buffer = @
+    let g:reg_content = @"
     call replace#util#delete_current_word()
-    call replace#util#write_text_at_current_row(buffer)
+    call replace#util#write_text_at_current_row(g:reg_content)
+    let @" = g:reg_content
 endfunction
 

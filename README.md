@@ -9,7 +9,7 @@ vim-replace: A text replace plugin for vim
 使用
 ------------
 
-当执行`yiw`、`yaw`等命令复制文本后，然后在`normal`模式下执行`rr`命令替换掉当前光标所在单词，在`visual`模式下执行`rr`命令则会替换选中的文本。
+当执行`yiw`、`yaw`等命令复制文本后，在`normal`模式下执行`rr`命令，则会替换掉当前光标所在单词，在`visual`模式下执行`rr`命令，则会替换掉选中的文本。
 
 License
 ------------

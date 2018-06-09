@@ -21,7 +21,7 @@ function! s:replace_text()
 
     if m == "n"
         return ":call ReplaceTextInNormal()\<cr>"
-    elseif m == "V" || m == 'v'
+    elseif m == "V" || m == "v"
         let g:reg_content = @"
         return "d:call ReplaceTextInVisual()\<cr>"
     endif

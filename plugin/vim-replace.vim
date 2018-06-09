@@ -23,7 +23,7 @@ function! s:replace_text()
         return ":call ReplaceTextInNormal()\<cr>"
     elseif m == "V" || m == 'v'
         let g:reg_content = @"
-        return "d:call ReplaceTextInVirtual()\<cr>"
+        return "d:call ReplaceTextInVisual()\<cr>"
     endif
 endfunction
 
@@ -36,7 +36,7 @@ function! ReplaceTextInNormal()
 endfunction
 
 " 在可视模式下替换文本
-function! ReplaceTextInVirtual()
+function! ReplaceTextInVisual()
     call <sid>write_text_at_current_row(g:reg_content)
     let @" = g:reg_content
 endfunction

@@ -14,6 +14,7 @@ let g:reg_content = ""
 
 nnoremap <expr> rr <sid>replace_text()
 xnoremap <expr> rr <sid>replace_text()
+command! -nargs=* ReplaceTo call replace#replace_all#replace_all(<f-args>)
 
 " 替换文本
 function! s:replace_text()

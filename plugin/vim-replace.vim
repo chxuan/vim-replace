@@ -23,23 +23,19 @@ function! s:replace_text()
     if m == "n"
         return ":call ReplaceTextInNormal()\<cr>"
     elseif m == "V" || m == "v"
-        let g:reg_content = @"
         return "d:call ReplaceTextInVisual()\<cr>"
     endif
 endfunction
 
 " 在正常模式下替换文本
 function! ReplaceTextInNormal()
-    let g:reg_content = @"
     call <sid>delete_current_word()
-    call <sid>write_text_at_current_row(g:reg_content)
-    let @" = g:reg_content
+    call <sid>paste_text()
 endfunction
 
 " 在可视模式下替换文本
 function! ReplaceTextInVisual()
-    call <sid>write_text_at_current_row(g:reg_content)
-    let @" = g:reg_content
+    call <sid>paste_text()
 endfunction
 
 " 获取当前模式
@@ -52,7 +48,8 @@ function! s:delete_current_word()
     execute "normal diw"
 endfunction
 
-" 在当前行写入文本
-function! s:write_text_at_current_row(text)
-    execute "normal i" . a:text
+" 粘贴文本
+function! s:paste_text()
+    execute "normal \"0P"
 endfunction
+

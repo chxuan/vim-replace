@@ -12,5 +12,5 @@ endfunction
 
 " 批量替换文本
 function! replace#util#replace_text_batch(src, target)
-    execute ":%s/" . a:src . "/" . a:target . "/g"
+    execute ':%s/\<' . a:src . '\>/' . a:target . '/g'
 endfunction

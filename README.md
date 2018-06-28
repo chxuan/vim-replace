@@ -1,21 +1,36 @@
 vim-replace: A text replace plugin for vim
 ===============================================
 
-安装
-------------
+## 安装
     
-如果你使用[Vundle][1]插件管理器, 将 `Plugin 'chxuan/vim-replace'` 加到 `~/.vimrc` 然后执行 `:PluginInstall`.
+- `vim-plug`
 
-使用
-------------
+    Plug 'chxuan/vim-replace'
 
-当执行`yiw`、`diw`等命令操作文本后，在`normal`模式下执行`rr`命令，则会替换掉当前光标所在单词，在`visual`模式下执行`rr`命令，则会替换掉选中的文本。
+- `Vundle`
 
-License
-------------
+    Plugin 'chxuan/vim-replace'
 
-This software is licensed under the [MIT license][2]. © 2018 chxuan
+## 使用
+
+- `rr`
+
+    当执行`yiw`、`diw`等命令操作文本后，在`normal`模式下执行`rr`命令，则会替换掉当前光标所在单词，在`visual`模式下执行`rr`命令，则会替换掉选中的文本。
+
+- `:ReplaceTo`
+
+    执行全局替换，目前只支持单个文件
+
+## 参考配置
+
+请将以下配置加到 `~/.vimrc`，如果不喜欢以下映射，可根据个人喜好更改。
+
+    nnoremap <leader>r :ReplaceTo<space>
 
 
-  [1]: https://github.com/VundleVim/Vundle.vim
-  [2]: https://github.com/chxuan/vim-replace/blob/master/LICENSE
+## License
+
+This software is licensed under the [MIT license][1]. © 2018 chxuan
+
+
+  [1]: https://github.com/chxuan/vim-replace/blob/master/LICENSE

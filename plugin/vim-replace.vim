@@ -49,10 +49,10 @@ endfunction
 
 " 删除当前单词
 function! s:delete_current_word()
-    execute "normal diw"
+    execute "normal! diw"
 endfunction
 
 " 当前行写入文本
 function! s:write_text_at_current_row(text)
-    execute "normal i" . a:text
+    execute "normal! i" . a:text
 endfunction
